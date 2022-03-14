@@ -95,9 +95,9 @@ $(".card .list-group").sortable({
     var tempArr = [];
 
     // loop over current set of children in sortable list
-    $(this)
-      .children()
-      .each(function() {
+    $(this).children().each(function() {
+      console.log($(this).children().each)
+      
         // save values in temp array
         tempArr.push({
           text: $(this)
@@ -109,7 +109,7 @@ $(".card .list-group").sortable({
             .text()
             .trim()
         });
-      });
+    });
 
     // trim down list's ID to match object property
     var arrName = $(this)
@@ -183,7 +183,7 @@ $(".list-group").on("click", "p", function() {
   var text = $(this)
     .text()
     .trim();
-
+console.log(text)
   // replace p element with a new textarea
   var textInput = $("<textarea>").addClass("form-control").val(text);
   $(this).replaceWith(textInput);
